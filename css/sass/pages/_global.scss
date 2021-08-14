@@ -1,0 +1,8 @@
+//--> Main Rules
+* { @include prefixAll(box-sizing, border-box); }
+
+//--> Make Style For Body
+body {
+    --main-Color: #{$mainColor};
+    overflow: hidden;
+}

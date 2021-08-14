@@ -1,0 +1,110 @@
+//======================================= Start Header ============================
+header {
+    position: relative;
+    min-height: 700px;
+    background: url("../img/header/01.png") no-repeat center center fixed;
+    overflow: hidden;
+    color: #EEE;
+    @include bgCover;
+    .container { padding-top: 80px; padding-bottom: 80px; height: 100% }
+    //--> Navbar
+    nav { 
+        font-size: 18px; color: #AAA;
+        ul {
+            position: absolute;
+            top: 0;
+            left: 90px;
+            overflow: hidden;
+            margin: 10px 0;
+            display: none;
+            z-index: 1;
+            li { 
+                float: left; padding: 10px 0; margin: 0 25px 10px 0; cursor: pointer;
+                &.active { color: var(--main-Color); border-bottom: 2px solid var(--main-Color) }
+                &:hover:not(.active) { color: var(--main-Color); border-bottom: 2px solid var(--main-Color) }
+            }
+        }
+        .glyphicon { 
+            position: absolute; 
+            top: 5px; 
+            right: 30px; 
+            font-size: 25px; 
+            z-index: 2; 
+            cursor: pointer; 
+            line-height: 50px;
+            &:hover { color: var(--main-Color) }
+        }
+    }
+    //--> Header Content
+    .content { 
+        img { border-radius: 50%}
+        h1 { 
+            font-size: 50px;
+            span { color: var(--main-Color) }
+        }
+        h5 { color: #666 }
+        .social-icons {
+            margin-top: 20px;
+            a { 
+                color: #666;
+                &:hover { 
+                    color: var(--main-Color);
+                    i { border-bottom: 1px solid var(--main-Color) }
+                }
+            }
+            i { padding-bottom: 5px; margin-left: 20px; border-bottom: 1px solid #666; cursor: pointer }
+        }
+    }
+    
+    //--> Style Of Header In Small Screen
+    @include SScreen {
+        //--> Navbar
+        nav {
+            .glyphicon { position: fixed }
+            ul {
+                position: fixed;
+                top: -10px;
+                padding-top: 42px;
+                background-color: #222;
+                width: 100%;
+                left: 0;
+                li {
+                    float: none;
+                    font-size: 16px;
+                    padding-left: 10px;
+                    @include prefixAll(transition, all .7s ease-in-out);
+                    &:hover:not(.active) {
+                        padding-left: 30px;
+                        font-weight: bold
+                    }
+                }
+            }
+        }
+    }
+    //--> Style Of Header In Medium Screen
+    @include MScreen {
+        //--> Navbar
+        nav {
+            .glyphicon { position: fixed }
+            ul {
+                position: fixed;
+                top: -10px;
+                padding-top: 42px;
+                background-color: #222;
+                width: 100%;
+                left: 0;
+                li {
+                    float: none;
+                    font-size: 16px;
+                    padding-left: 10px;
+                    @include prefixAll(transition, all .7s ease-in-out);
+                    &:hover:not(.active) {
+                        padding-left: 30px;
+                        font-weight: bold
+                    }
+                }
+            }
+        }
+    }
+}
+//======================================= End Header ============================

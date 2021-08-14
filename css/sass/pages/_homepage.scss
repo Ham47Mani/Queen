@@ -1,0 +1,330 @@
+//======================================= Start About ============================
+.about {
+    .img { 
+        position: relative; margin: 0 auto;
+        img { margin-top: -191px }
+    }
+    article {
+        h2 { margin: 20px 0; font-size: 50px; font-weight: bold; color: #333 }
+        span { color: var(--main-Color); }
+        p { line-height: 1.5 }
+        p:first-of-type { color: #999; font-size: 16px; margin: 0 0 20px }
+        p:last-of-type { color: #555; font-size: 18px; margin-bottom: 80px }
+    }
+    
+    //--> Style Of About In Small Screen
+    @include SScreen {
+        article { 
+            p:first-of-type { font-size: 12px }
+            p:last-of-type  { font-size: 11px }
+        }
+    }
+}
+//======================================= End About ============================
+
+//======================================= Start Skills ============================
+.our-skills { 
+    background: url("../img/skills/bg.png") no-repeat center center fixed;
+    @include prefixAll(background-size, cover);
+    color: #EEE;
+    .container { padding-top: 80px; padding-bottom: 80px }
+    h2 { 
+        font-weight: bold; margin: 0 0 40px;
+        span { color: var(--main-Color); }
+    }
+    //--> Skills Right Side
+    .skills-right { 
+        border-right: 3px solid #EEE; padding-right: 50px;
+        .skills { 
+            position: relative;
+            .progress:first-of-type:before { top: 5px; right: -22px }
+            .progress:first-of-type:after { top: 5px; right: -62px }
+        }
+    }
+    //--> Skills Left Side
+    .skills-left { 
+        margin-top: 60px; 
+        border-right: 3px solid #EEE; 
+        padding-right: 50px; 
+        margin-left: -3px;
+        @include prefixAll(transform, rotate(180deg));
+        .progress-bar {
+            @include prefixAll(transform, rotate(180deg));
+        }
+        .skills .progress:first-of-type:before { top: 35px; right: 28px }
+        .skills .progress:first-of-type:after { top: 33px; right: -12px }
+    }
+    //--> Groupping Skills
+    .skills-left .skills .progress:first-of-type:after,
+    .skills-right .skills .progress:first-of-type:after {
+        content: ".";
+        color: var(--main-Color);;
+        font-size: 35px;
+        font-weight: bold;
+        line-height: 0;
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #EEE;
+        position: absolute
+    }
+    .skills-left .skills .progress:first-of-type:before,
+    .skills-right .skills .progress:first-of-type:before {
+        content: "";
+        display: block;
+        border-width: 10px 0 10px 20px;
+        border-style: solid;
+        border-color: transparent #EEE;
+        position: absolute
+    }
+    
+    //--> Style Of Skills In Small Screen
+    @include SScreen {
+        .h1 { font-size: 35px }
+        .skills-right {
+            margin-right: 25px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+        .skills-left {
+            margin-right: 25px;
+            margin-top: 0px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            @include prefixAll(transform, rotate(0deg));
+            .progress-bar {
+                @include prefixAll(transform, rotate(0deg));
+            }
+        }
+        .skills-left .skills .progress:first-of-type:before,
+        .skills-left .skills .progress:first-of-type:after { top: 40px }
+    }
+    //--> Style Of Skills In Medium Screen
+    @include MScreen {
+        .skills-right {
+            margin-right: 25px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+        .skills-left {
+            margin-right: 25px;
+            margin-top: 0px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            @include prefixAll(transform, rotate(0deg));
+            .progress-bar {
+                @include prefixAll(transform, rotate(0deg));
+            }
+        }
+        .skills-left .skills .progress:first-of-type:before,
+        .skills-left .skills .progress:first-of-type:after { top: 40px }
+    }
+}
+//======================================= End Skills ============================
+
+//======================================= Start Services ============================
+.our-services { 
+    background-color: #EEE; color: #333; padding-top: 80px; padding-bottom: 80px;
+    .h1 { 
+        font-size: 50px; font-weight: bold; margin: 0 0 40px;
+        span { color: var(--main-Color);}
+    }
+    //--> Services
+    .services { 
+        margin-top: 30px;
+        i {
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 10px;
+            border: 3px solid #333;
+            @include prefixAll(transition, all .5s ease-in-out);
+        }
+        h2 { font-weight: bold; @include prefixAll(transition, all .5s ease-in-out) }
+        &:hover i { color: #FFF; border-color: var(--main-Color);; background-color: var(--main-Color); }
+        &:hover h2 { color: var(--main-Color); }
+    }
+}
+//======================================= End Services ============================
+
+//======================================= Start Testimonials ============================
+.testmonials {
+    background: url("../img/testmonials/bg.png") no-repeat center center fixed;
+    color: #EEE;
+    @include bgCover;
+    .container { padding-top: 80px;  padding-bottom: 80px }
+    h2 { 
+        font-size: 45px ;font-weight: bold; margin: 0 0 30px;
+        span { color: var(--main-Color); }
+    }
+    .row { margin-top: 40px }
+    .fa {
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid var(--main-Color);;
+        line-height: 50px;
+        border-radius: 50%;
+        &:hover { background-color: #EEE; color: var(--main-Color);; border-color: #EEE}
+    }
+    .lorem { 
+        p { display: none; margin: 0 0 40px }
+        .active { display: block }
+    }
+    .avatar  {
+        img { width: 80px; height: 80px; border-radius: 50%; margin-right: 10px }
+        .active { width: 100px; height: 100px; border: 3px solid var(--main-Color); }
+    }
+    
+    //--> Style Of Testimonials In Small Screen
+    @include SScreen {
+        h2 { font-size: 35px }
+        .lorem .lead { font-size: 11px }
+        .fa { font-size: 15px; width: 30px; height: 30px; line-height: 30px }
+        .avatar {
+            img { width: 35px; height: 35px }
+            .active { width: 60px; height: 60px }
+        }
+    }
+}
+//======================================= End Testimonials ============================
+
+//======================================= Start Portfolios ============================
+.portfolios { 
+    background-color: #EEE; color: #333; padding-top: 80px; padding-bottom: 80px;
+    .h1 { 
+        font-size: 50px; font-weight: bold; margin: 0 0 40px;
+        span { color: var(--main-Color); }
+    }
+    ul li {
+        display: inline-block;
+        padding: 10px 25px;
+        margin: 10px 10px 50px 0;
+        color: #999;
+        font-weight: bold;
+        border: 1px solid #AAA;
+        cursor: pointer;
+        border-radius: 5px;
+        &.active { background-color: var(--main-Color);; border: 1px solid var(--main-Color);; color: #FFF }
+    }
+    //--> Gallery
+    .galery { 
+        overflow: hidden;
+        .item { 
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+            display: none;
+            width: 32.666%;
+            float: left;
+            .bg { width: 100%; height: 290px }
+            .fr { position: absolute; overflow: hidden; background-color: #F0F }
+        }
+        .item2, .item4, .item8 { margin: 0 1% 0 1% }
+        //--> Item 1
+        .item1 {
+            .fr { 
+                top: 13px; left: 15px; height: 189px; width: 352px;
+                img { 
+                    width: 100%;
+                    @include prefixAll(transition, all 4s ease-in-out);
+                }
+                &:hover img { margin-top: -650px }
+            }
+        }
+        //--> Item 4
+        .item4 {
+            .fr { 
+                top: 26px; left: 19px; width: 342px; height: 215px;
+                &:hover img { margin-top: -5140px }
+            }
+        }
+        //--> Item 6
+        .item6 {
+            .fr { 
+                top: 44px; left: 67px; width: 244px; height: 160px;
+                &:hover img { margin-top: -976px }
+            }
+        }
+        //--> Item 9
+        .item9 {
+            .fr { 
+                top: 17px; left: 39px; width: 307px; height: 257px;
+                &:hover img { margin-top: -4640px }
+            }
+        }
+        .item4 .fr img, .item6 .fr img, .item9 .fr img { 
+            width: 100%;
+            @include prefixAll(transition, all 10s ease-in-out);
+        }
+    }
+    //--> Style Of Portfolios In Small Screen
+    @include SScreen {
+        .h1 { font-size: 35px }
+        ul li { font-size: 12px; padding: 5px 12px }
+        .item { 
+            width: 90%; margin-left: 5%; margin-right: 5%; margin-bottom: 20px;
+            &.item1 .fr { height: 189px; width: 416px }
+            &.item4 .fr { width: 409px }
+            &.item6 .fr { left: 83px; width: 279px; height: 155px }
+            &.item9 .fr { width: 364px }
+        }
+    }
+    //--> Style Of Portfolios In Medium Screen
+    @include MScreen {
+        .item { 
+            width: 48%; margin-left: 1%; margin-right: 1%; margin-bottom: 20px;
+            &.item1 .fr { height: 189px; width: 335px }
+            &.item4 .fr { width: 317px }
+            &.item6 .fr { left: 66px; width: 223px; height: 155px }
+            &.item9 .fr { width: 298px }
+        }
+    }
+}
+//======================================= End Portfolios ============================
+
+//======================================= Start Contact Us ============================
+.contact {
+    color: #EEE;
+    @include bgCover;
+    background: url("../img/contactUs/bg.png") no-repeat center center fixed;
+    .layer { overflow: hidden }
+    //--> Map
+    .map { 
+        float: left; width: 48%; margin-right: 2%; height: 100%;
+        iframe { width: 100% }
+    }
+    //--> Contact Form
+    .info-form {
+        float: left;
+        width: 45%;
+        margin-right: 5%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        h2 { margin: 0 0 20px; color: #999 }
+        .h1 span { color: var(--main-Color);}
+        form {
+            input, textarea {
+                margin-bottom: 15px;
+                background-color: transparent;
+                border-color: #666
+            }
+            input:first-of-type { margin-top: 30px }
+            textarea {
+                width: 100%;
+                font-size: 18px;
+                padding: 5px 10px;
+                height: 140px;
+                border-radius: 10px
+            }
+        }
+        button { width: 100%; background-color: var(--main-Color);; border: 1px solid var(--main-Color); }
+    }
+    //--> Style Of Contact Us In Small Screen
+    @include SScreen {
+        .info-form, .map { float: none; width: 96%; margin-left: 2%; margin-right: 2% }
+        .info-form { padding-top: 30px; padding-bottom: 40px }
+    }
+}
+//======================================= End Contact Us ============================

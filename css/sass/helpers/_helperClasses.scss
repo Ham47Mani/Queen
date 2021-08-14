@@ -1,0 +1,10 @@
+//--> Create Style For The Overlay
+.layer { width: 100%; height: 100%; background-color: rgba(2, 2, 2, .8) }
+
+//--> Make Text In Uppercase
+.upper { text-transform: uppercase}
+
+//--> Customize Bootstrap Class
+.progress { height: 30px; margin-top: 30px }
+.progress-bar { font-size: 16px; line-height: 30px }
+.form-control { color: #AAA }
